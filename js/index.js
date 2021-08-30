@@ -1,42 +1,51 @@
-import { recipes } from './recipes.js'
+import { recipes } from "./recipes.js";
 
+function init() {
+  const recipesSection = document.getElementById("recipes");
+  recipes.forEach((recipe) => {
+    recipesSection.appendChild(new RecipesCard(recipe).buildCard(recipe));
+  });
+}
 class RecipesCard {
-  static init () {
-    const recipesSection = document.getElementById('recipes')
-    recipes.forEach((recipe) => {
-      recipesSection.append(new RecipesCard(recipe).buildCard(recipes))
-    })
+  constructor(recipe) {
+    this.id = recipe.id;
+    this.name = recipe.name;
+    this.servings = recipe.servings;
+    this.ingredients = recipe.ingredients;
+    this.time = recipe.time;
+    this.description = recipe.description;
+    this.appliance = recipe.appliance;
+    this.ustensils = recipe.ustensils;
   }
 
-  constructor (id, name, servings, ingredients, time, description, appliance, ustensils) {
-    this.id = id
-    this.name = name
-    this.servings = servings
-    this.ingredients = ingredients
-    this.time = time
-    this.description = description
-    this.appliance = appliance
-    this.ustensils = ustensils
-  }
-
-  buildCard (recipes) {
-    const card = document.createElement('article')
-    card.classList.add('recipeCard')
+  buildCard() {
+    const card = document.createElement("article");
+    card.classList.add("recipeCard");
     card.innerHTML = `
       <div class="image"></div>
       <div class="textContent">
         <div class="textContentUp">
-        <h2 class="name">${recipes.name}</h2>
-          <p class="time"><img class="clock" src="./images/clock.svg" alt="time">${recipes.time} min</p>
+        <h2 class="name">${this.name}</h2>
+          <p class="time"><img class="clock" src="./images/clock.svg" alt="time">${
+            this.time
+          } min</p>
         </div>
         <div class="textContentDown">
-          <p class="ingredients">${recipes.ingredients}</p>
-          <p class="description">${recipes.description}</p>
+          <ul class="ingredients">
+          ${this.ingredients.map(
+            (element) =>
+              `<li><span>${element.ingredient}</span> : ${
+                "quantity" in element ? element.quantity : ""
+              }
+          ${"unit" in element ? element.unit : ""}`
+          )}</li>
+          </ul>
+          <p class="description">${this.description}</p>
         </div>
       </div>
-    `
-    return card
+    `;
+    return card;
   }
 }
 
-RecipesCard.init()
+init();
