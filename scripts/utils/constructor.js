@@ -1,11 +1,7 @@
-import { recipes } from "./recipes.js";
+export { RecipesCard };
 
-function init() {
-  const recipesSection = document.getElementById("recipes");
-  recipes.forEach((recipe) => {
-    recipesSection.appendChild(new RecipesCard(recipe).buildCard(recipe));
-  });
-}
+// Create recipies cards
+
 class RecipesCard {
   constructor(recipe) {
     this.id = recipe.id;
@@ -47,5 +43,3 @@ class RecipesCard {
     return card;
   }
 }
-
-init();

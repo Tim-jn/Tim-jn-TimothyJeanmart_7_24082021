@@ -2,9 +2,9 @@
   "name": "les_petits_plats",
   "version": "1.0.0",
   "description": "Projet 7 OpenClassrooms",
-  "main": "index.js",
+  "main": "main.js",
   "scripts": {
-    "sass": "sass --watch ./sass/_styles.scss:./css/style.css"
+    "sass": "sass --watch ./sass/_styles.scss:./styles/style.css"
   },
   "repository": {
     "type": "git",

@@ -3,10 +3,25 @@ header #site-search {
   font: 400 18px "Lato", sans-serif;
 }
 
-button {
+#filters {
+  margin: 25px 0px 25px 100px;
+}
+#filters button {
   width: 170px;
   height: 69px;
-  color: blue;
+  border-radius: 5px;
+  border: none;
+  margin-right: 20px;
+  color: #fff;
+}
+#filters .first-filter {
+  background: #3282f7;
+}
+#filters .second-filter {
+  background: #68d9a4;
+}
+#filters .third-filter {
+  background: #ed6454;
 }
 
 body {
@@ -58,7 +73,6 @@ body #recipes {
   flex-direction: row;
   flex-wrap: wrap;
   gap: 50px;
-  margin-top: 82px;
 }
 body #recipes .recipeCard {
   width: 380px;

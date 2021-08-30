@@ -1,0 +1,26 @@
+// filters buttons
+
+#filters {
+  margin: 25px 0px 25px 100px;
+
+  button {
+    width: 170px;
+    height: 69px;
+    border-radius: $radius;
+    border: none;
+    margin-right: 20px;
+    color: #fff;
+  }
+
+  .first-filter {
+    background: #3282f7;
+  }
+
+  .second-filter {
+    background: #68d9a4;
+  }
+
+  .third-filter {
+    background: #ed6454;
+  }
+}
