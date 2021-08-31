@@ -1,14 +1,16 @@
 import { recipes } from "./data/recipes.js";
 import { RecipesCard } from "./utils/constructor.js";
-export { init };
+import { searchBar } from "./utils/searchBar.js";
+export { displayRecipies };
 
 // init and create recipies cards
 
-function init() {
+function displayRecipies() {
   const recipesSection = document.getElementById("recipes");
   recipes.forEach((recipe) => {
-    recipesSection.appendChild(new RecipesCard(recipe).buildCard(recipe));
+    recipesSection.appendChild(new RecipesCard(recipe).buildCard());
   });
 }
 
-init()
+displayRecipies();
+searchBar();

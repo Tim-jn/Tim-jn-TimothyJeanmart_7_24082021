@@ -29,6 +29,7 @@ body {
       position: relative;
 
       #site-search {
+        font: 400 18px $first-typography;
         padding-left: 22px;
         width: 100%;
         border-radius: $radius;
@@ -57,13 +58,19 @@ body {
     flex-wrap: wrap;
     gap: 50px;
 
+    .missing {
+      font: 400 25px $first-typography;
+      margin: 25px auto;
+      text-align: center;
+    }
+
     .recipeCard {
       width: 380px;
       height: 364px;
+      cursor: pointer;
 
       h2,
       p {
-        // à supprimer
         margin: 0;
         padding: 0;
       }

@@ -1,8 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Roboto&display=swap");
-header #site-search {
-  font: 400 18px "Lato", sans-serif;
-}
-
 #filters {
   margin: 25px 0px 25px 100px;
 }
@@ -13,6 +9,7 @@ header #site-search {
   border: none;
   margin-right: 20px;
   color: #fff;
+  cursor: pointer;
 }
 #filters .first-filter {
   background: #3282f7;
@@ -51,6 +48,7 @@ body header .search-bar {
   position: relative;
 }
 body header .search-bar #site-search {
+  font: 400 18px "Lato", sans-serif;
   padding-left: 22px;
   width: 100%;
   border-radius: 5px;
@@ -74,9 +72,15 @@ body #recipes {
   flex-wrap: wrap;
   gap: 50px;
 }
+body #recipes .missing {
+  font: 400 25px "Lato", sans-serif;
+  margin: 25px auto;
+  text-align: center;
+}
 body #recipes .recipeCard {
   width: 380px;
   height: 364px;
+  cursor: pointer;
 }
 body #recipes .recipeCard h2,
 body #recipes .recipeCard p {
