@@ -36,6 +36,11 @@ body {
         border: none;
         background: $primary-color;
 
+        &:active,
+        &:focus {
+          outline: none;
+        }
+
         &::placeholder {
           opacity: 0.5;
         }

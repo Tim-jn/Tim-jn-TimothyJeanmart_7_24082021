@@ -2,26 +2,58 @@
 
 #filters {
   margin: 25px 0px 25px 100px;
+  display: flex;
 
-  button {
-    width: 170px;
+  form {
+    position: relative;
     height: 69px;
-    border-radius: $radius;
-    border: none;
-    margin-right: 20px;
-    color: #fff;
-    cursor: pointer;
-  }
 
-  .first-filter {
-    background: #3282f7;
-  }
+    input {
+      width: 170px;
+      height: 100%;
+      border-radius: $radius;
+      border: none;
+      margin-right: 20px;
+      color: #fff;
+      cursor: pointer;
+      font: 500 18px $second-typography;
+      padding-left: 26px;
 
-  .second-filter {
-    background: #68d9a4;
-  }
+      &::placeholder {
+        color: #fff;
+      }
 
-  .third-filter {
-    background: #ed6454;
+      &:active,
+      &:focus {
+        outline: none;
+      }
+    }
+
+    button {
+      position: absolute;
+      top: 28px;
+      left: 130px;
+      cursor: pointer;
+      background: none;
+      border: none;
+
+      &:focus,
+      &:active {
+        transition: 0.5s ease-in-out;
+        transform: rotate(180deg);
+      }
+    }
+
+    .first-filter {
+      background: #3282f7;
+    }
+
+    .second-filter {
+      background: #68d9a4;
+    }
+
+    .third-filter {
+      background: #ed6454;
+    }
   }
 }

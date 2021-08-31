@@ -1,23 +1,48 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Roboto&display=swap");
 #filters {
   margin: 25px 0px 25px 100px;
+  display: flex;
 }
-#filters button {
-  width: 170px;
+#filters form {
+  position: relative;
   height: 69px;
+}
+#filters form input {
+  width: 170px;
+  height: 100%;
   border-radius: 5px;
   border: none;
   margin-right: 20px;
   color: #fff;
   cursor: pointer;
+  font: 500 18px "Roboto", sans-serif;
+  padding-left: 26px;
 }
-#filters .first-filter {
+#filters form input::placeholder {
+  color: #fff;
+}
+#filters form input:active, #filters form input:focus {
+  outline: none;
+}
+#filters form button {
+  position: absolute;
+  top: 28px;
+  left: 130px;
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+#filters form button:focus, #filters form button:active {
+  transition: 0.5s ease-in-out;
+  transform: rotate(180deg);
+}
+#filters form .first-filter {
   background: #3282f7;
 }
-#filters .second-filter {
+#filters form .second-filter {
   background: #68d9a4;
 }
-#filters .third-filter {
+#filters form .third-filter {
   background: #ed6454;
 }
 
@@ -54,6 +79,9 @@ body header .search-bar #site-search {
   border-radius: 5px;
   border: none;
   background: #E7E7E7;
+}
+body header .search-bar #site-search:active, body header .search-bar #site-search:focus {
+  outline: none;
 }
 body header .search-bar #site-search::placeholder {
   opacity: 0.5;
