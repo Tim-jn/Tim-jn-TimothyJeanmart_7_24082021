@@ -3,7 +3,7 @@ import { displayRecipies } from "../main.js";
 import { RecipesCard } from "../utils/constructor.js";
 export { searchBar };
 
-// algorithm that show only recipes including the searched item
+// algorithm that show only recipes including the searched items
 // optimized to ignore capital letters and accents
 
 function searchBar() {

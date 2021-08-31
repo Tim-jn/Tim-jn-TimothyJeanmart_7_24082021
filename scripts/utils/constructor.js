@@ -24,7 +24,7 @@ class RecipesCard {
     card.classList.add("recipeCard");
     card.innerHTML = `
       <div class="image"> 
-      <img src="./images/${this.image}">
+      <img src="./images/recipes-images/${this.image}">
       </div>
       <div class="textContent">
         <div class="textContentUp">
