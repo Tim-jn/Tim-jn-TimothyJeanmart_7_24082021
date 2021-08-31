@@ -4,6 +4,7 @@ import { RecipesCard } from "../utils/constructor.js";
 export { searchBar };
 
 // algorithm that show only recipes including the searched item
+// optimized to ignore capital letters and accents
 
 function searchBar() {
   const searchInput = document.getElementById("site-search");
@@ -14,9 +15,21 @@ function searchBar() {
     const filteredRecipies = recipes.filter((recipe) => {
       const recipeIngredients = recipe.ingredients.map((element) => element.ingredient).toString();
       return (
-        recipe.name.toLocaleLowerCase().includes(input) ||
-        recipeIngredients.toLocaleLowerCase().includes(input) ||
-        recipe.description.toLocaleLowerCase().includes(input)
+        recipe.name
+          .toLocaleLowerCase()
+          .normalize("NFD")
+          .replace(/[\u0300-\u036f]/g, "")
+          .includes(input) ||
+        recipeIngredients
+          .toLocaleLowerCase()
+          .normalize("NFD")
+          .replace(/[\u0300-\u036f]/g, "")
+          .includes(input) ||
+        recipe.description
+          .toLocaleLowerCase()
+          .normalize("NFD")
+          .replace(/[\u0300-\u036f]/g, "")
+          .includes(input)
       );
     });
 

@@ -90,7 +90,13 @@ body #recipes .recipeCard p {
 body #recipes .recipeCard .image {
   width: 100%;
   height: 50%;
-  background: #c7bebe;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+body #recipes .recipeCard .image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
 }

@@ -4,6 +4,7 @@ const recipes = [
   {
     id: 1,
     name: "Limonade de Coco",
+    image: "LimonadeDeCoco.jpg",
     servings: 1,
     ingredients: [
       {
@@ -39,6 +40,7 @@ const recipes = [
   {
     id: 2,
     name: "Poisson Cru à la tahitienne",
+    image: "PoissonCruALaTahitienne.jpg",
     servings: 2,
     ingredients: [
       {
@@ -77,6 +79,7 @@ const recipes = [
   {
     id: 3,
     name: "Poulet coco réunionnais",
+    image: "pouletCocoReunionnais.jpg",
     servings: 4,
     ingredients: [
       {
@@ -114,6 +117,7 @@ const recipes = [
   {
     id: 4,
     name: "Salade de riz",
+    image: "saladeDeRiz.jpg",
     servings: 4,
     ingredients: [
       {
@@ -154,6 +158,7 @@ const recipes = [
   {
     id: 5,
     name: "Tarte au thon",
+    image: "tarteAuThon.jpg",
     servings: 4,
     ingredients: [
       {
@@ -194,6 +199,7 @@ const recipes = [
   {
     id: 6,
     name: "Tarte aux pommes",
+    image: "tarteAuxPommes.jpg",
     servings: 6,
     ingredients: [
       {
@@ -1776,4 +1782,3 @@ const recipes = [
     ustensils: ["rouleau à patisserie", "fouet"],
   },
 ];
-

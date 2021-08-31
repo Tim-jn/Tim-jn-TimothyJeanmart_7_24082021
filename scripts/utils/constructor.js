@@ -6,6 +6,11 @@ class RecipesCard {
   constructor(recipe) {
     this.id = recipe.id;
     this.name = recipe.name;
+    if (recipe.image) {
+      this.image = recipe.image;
+    } else {
+      this.image = "greyBackground.jpg";
+    }
     this.servings = recipe.servings;
     this.ingredients = recipe.ingredients;
     this.time = recipe.time;
@@ -18,7 +23,9 @@ class RecipesCard {
     const card = document.createElement("article");
     card.classList.add("recipeCard");
     card.innerHTML = `
-      <div class="image"></div>
+      <div class="image"> 
+      <img src="./images/${this.image}">
+      </div>
       <div class="textContent">
         <div class="textContentUp">
         <h2 class="name">${this.name}</h2>
