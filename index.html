@@ -23,18 +23,29 @@
         </div>
     </header>
     <main id="content">
+        <aside class="research-tag">
+        </aside>
         <nav id="filters">
-            <form>
-                <input type="search" class="first-filter" placeholder="Ingrédients">
-                <button type="button"><img src="./images/more-filters.svg"></button>
+            <form class="first-filter">
+                <div class="filter-button">
+                    <input type="text" class="ingredients-input" placeholder="Ingrédients"></select>
+                    <button type="button"><img class="ingredients-button" src="./images/more-filters.svg"></button> 
+                </div>
+                <ul class="list-content ingredients-content"></ul>
             </form>
-            <form>
-                <input type="search" class="second-filter" placeholder="Appareil">
-                <button type="button"><img src="./images/more-filters.svg"></button>
+            <form class="second-filter">
+                <div class="filter-button">
+                    <input type="text" class="appliances-input" placeholder="Appareil"></select>
+                    <button type="button"><img class="appliances-button" src="./images/more-filters.svg"></button>
+                </div>
+                <ul class="list-content appliances-content"></ul>
             </form>
-            <form>
-                <input type="search" class="third-filter" placeholder="Ustensiles">
-                <button type="button"><img src="./images/more-filters.svg"></button>
+            <form class="third-filter">
+                <div class="filter-button">
+                    <input type="text" class="ustensils-input" placeholder="Ustensiles"></select>
+                    <button type="button"><img class="ustensils-button" src="./images/more-filters.svg"></button>
+                </div>
+                <ul class="list-content ustensils-content"></ul>
             </form>
         </nav>
         <section id="recipes">

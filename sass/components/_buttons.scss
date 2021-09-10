@@ -1,59 +1,120 @@
+// research tags
+
+.research-tag {
+  margin: 25px 0 0 100px;
+
+  .tag-item {
+    background: #3282f7;
+    border-radius: 5px;
+    color: #fff;
+    margin-right: 15px;
+    font: 700 14px $first-typography;
+    justify-content: space-around;
+    align-items: center;
+    display: none;
+    flex-direction: row;
+
+    .text {
+      padding: 10px;
+    }
+
+    img {
+      padding: 10px 10px 10px 5px;
+    }
+  }
+}
+
 // filters buttons
 
 #filters {
-  margin: 25px 0px 25px 100px;
+  margin: 15px 0px 25px 100px;
   display: flex;
+  max-width: 1240px;
+  gap: 20px;
 
-  form {
-    position: relative;
-    height: 69px;
-
-    input {
-      width: 170px;
-      height: 100%;
-      border-radius: $radius;
-      border: none;
-      margin-right: 20px;
-      color: #fff;
-      cursor: pointer;
-      font: 500 18px $second-typography;
-      padding-left: 26px;
-
-      &::placeholder {
-        color: #fff;
-      }
-
-      &:active,
-      &:focus {
-        outline: none;
-      }
-    }
-
-    button {
-      position: absolute;
-      top: 28px;
-      left: 130px;
-      cursor: pointer;
-      background: none;
-      border: none;
-
-      &:focus,
-      &:active {
-        transition: 0.5s ease-in-out;
-        transform: rotate(180deg);
-      }
-    }
-
-    .first-filter {
+  .first-filter {
+    input,
+    .ingredients-content {
       background: #3282f7;
     }
+  }
 
-    .second-filter {
+  .second-filter {
+    input,
+    .appliances-content {
       background: #68d9a4;
     }
+  }
 
-    .third-filter {
+  .third-filter {
+    input,
+    .ustensils-content {
       background: #ed6454;
+    }
+  }
+
+  form {
+    .filter-button {
+      position: relative;
+      height: 69px;
+
+      input {
+        width: 170px;
+        height: 100%;
+        border-radius: $radius;
+        border: none;
+
+        color: #fff;
+        cursor: pointer;
+        font: 500 18px $second-typography;
+        padding-left: 26px;
+
+        &::placeholder {
+          color: #fff;
+        }
+
+        &:active,
+        &:focus {
+          outline: none;
+        }
+      }
+
+      button {
+        position: absolute;
+        top: 28px;
+        right: 6%;
+        cursor: pointer;
+        background: none;
+        border: none;
+      }
+    }
+
+    .list-content {
+      margin: -7px 0 0 0;
+      padding: 0;
+      color: #fff;
+      list-style: none;
+      font: 400 18px $first-typography;
+      grid-template-columns: repeat(3, 2fr);
+      grid-template-rows: 1fr;
+      gap: 10px 20px;
+      padding: 17.5px;
+      border-radius: 5px;
+      display: none;
+      z-index: 3;
+
+      li {
+        width: 200px;
+        gap: 20px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      .missing {
+        text-overflow: inherit;
+        overflow: visible;
+      }
     }
   }
 }

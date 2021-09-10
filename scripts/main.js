@@ -1,16 +1,23 @@
-import { recipes } from "./data/recipes.js";
 import { RecipesCard } from "./utils/constructor.js";
 import { searchBar } from "./utils/searchBar.js";
-export { displayRecipies };
+import { generateAndInitLists } from "./utils/filters.js";
+export { displayRecipies, LowerCaseNormalize };
 
 // init and create recipies cards
 
-function displayRecipies() {
+function displayRecipies(recipes) {
   const recipesSection = document.getElementById("recipes");
   recipes.forEach((recipe) => {
     recipesSection.appendChild(new RecipesCard(recipe).buildCard());
   });
 }
 
-displayRecipies();
+function LowerCaseNormalize(items) {
+  return items
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "");
+}
+
 searchBar();
+

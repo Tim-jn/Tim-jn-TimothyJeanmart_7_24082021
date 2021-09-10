@@ -1,49 +1,95 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Roboto&display=swap");
-#filters {
-  margin: 25px 0px 25px 100px;
-  display: flex;
+.research-tag {
+  margin: 25px 0 0 100px;
 }
-#filters form {
+.research-tag .tag-item {
+  background: #3282f7;
+  border-radius: 5px;
+  color: #fff;
+  margin-right: 15px;
+  font: 700 14px "Lato", sans-serif;
+  justify-content: space-around;
+  align-items: center;
+  display: none;
+  flex-direction: row;
+}
+.research-tag .tag-item .text {
+  padding: 10px;
+}
+.research-tag .tag-item img {
+  padding: 10px 10px 10px 5px;
+}
+
+#filters {
+  margin: 15px 0px 25px 100px;
+  display: flex;
+  max-width: 1240px;
+  gap: 20px;
+}
+#filters .first-filter input,
+#filters .first-filter .ingredients-content {
+  background: #3282f7;
+}
+#filters .second-filter input,
+#filters .second-filter .appliances-content {
+  background: #68d9a4;
+}
+#filters .third-filter input,
+#filters .third-filter .ustensils-content {
+  background: #ed6454;
+}
+#filters form .filter-button {
   position: relative;
   height: 69px;
 }
-#filters form input {
+#filters form .filter-button input {
   width: 170px;
   height: 100%;
   border-radius: 5px;
   border: none;
-  margin-right: 20px;
   color: #fff;
   cursor: pointer;
   font: 500 18px "Roboto", sans-serif;
   padding-left: 26px;
 }
-#filters form input::placeholder {
+#filters form .filter-button input::placeholder {
   color: #fff;
 }
-#filters form input:active, #filters form input:focus {
+#filters form .filter-button input:active, #filters form .filter-button input:focus {
   outline: none;
 }
-#filters form button {
+#filters form .filter-button button {
   position: absolute;
   top: 28px;
-  left: 130px;
+  right: 6%;
   cursor: pointer;
   background: none;
   border: none;
 }
-#filters form button:focus, #filters form button:active {
-  transition: 0.5s ease-in-out;
-  transform: rotate(180deg);
+#filters form .list-content {
+  margin: -7px 0 0 0;
+  padding: 0;
+  color: #fff;
+  list-style: none;
+  font: 400 18px "Lato", sans-serif;
+  grid-template-columns: repeat(3, 2fr);
+  grid-template-rows: 1fr;
+  gap: 10px 20px;
+  padding: 17.5px;
+  border-radius: 5px;
+  display: none;
+  z-index: 3;
 }
-#filters form .first-filter {
-  background: #3282f7;
+#filters form .list-content li {
+  width: 200px;
+  gap: 20px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
-#filters form .second-filter {
-  background: #68d9a4;
-}
-#filters form .third-filter {
-  background: #ed6454;
+#filters form .list-content .missing {
+  text-overflow: inherit;
+  overflow: visible;
 }
 
 body {
@@ -176,7 +222,7 @@ body #recipes .recipeCard .textContent .textContentDown .ingredients {
   list-style-type: none;
   font-size: 12px;
   max-width: 171px;
-  height: 90px;
+  height: 87px;
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 6;
