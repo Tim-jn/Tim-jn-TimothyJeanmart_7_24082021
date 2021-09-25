@@ -11,8 +11,9 @@
     font: 700 14px $first-typography;
     justify-content: space-around;
     align-items: center;
-    display: none;
+    display: inline-flex;
     flex-direction: row;
+    cursor: pointer;
 
     .text {
       padding: 10px;
@@ -31,6 +32,7 @@
   display: flex;
   max-width: 1240px;
   gap: 20px;
+  height: 70px;
 
   .first-filter {
     input,
@@ -101,7 +103,8 @@
       padding: 17.5px;
       border-radius: 5px;
       display: none;
-      z-index: 3;
+      z-index: 10;
+      overflow: overlay;
 
       li {
         width: 200px;
@@ -109,6 +112,7 @@
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
+        cursor: pointer;
       }
 
       .missing {

@@ -1,6 +1,7 @@
 body {
   max-width: 1440px;
   margin: auto;
+  background: rgb(66, 65, 70);
 
   header {
     .images {
@@ -58,10 +59,13 @@ body {
 
   #recipes {
     display: flex;
-    justify-content: center;
+    justify-content: left;
+    margin: auto;
     flex-direction: row;
     flex-wrap: wrap;
     gap: 50px;
+    margin-bottom: 50px;
+    width: 1240px;
 
     .missing {
       font: 400 25px $first-typography;
@@ -163,7 +167,7 @@ body {
             font-family: $second-typography;
             font-size: 12px;
             width: 171px;
-            height: 84px;
+            height: 90px;
             display: -webkit-box;
             -webkit-box-orient: vertical;
             -webkit-line-clamp: 6;

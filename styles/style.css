@@ -10,8 +10,9 @@
   font: 700 14px "Lato", sans-serif;
   justify-content: space-around;
   align-items: center;
-  display: none;
+  display: inline-flex;
   flex-direction: row;
+  cursor: pointer;
 }
 .research-tag .tag-item .text {
   padding: 10px;
@@ -25,6 +26,7 @@
   display: flex;
   max-width: 1240px;
   gap: 20px;
+  height: 70px;
 }
 #filters .first-filter input,
 #filters .first-filter .ingredients-content {
@@ -78,7 +80,8 @@
   padding: 17.5px;
   border-radius: 5px;
   display: none;
-  z-index: 3;
+  z-index: 10;
+  overflow: overlay;
 }
 #filters form .list-content li {
   width: 200px;
@@ -86,6 +89,7 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  cursor: pointer;
 }
 #filters form .list-content .missing {
   text-overflow: inherit;
@@ -95,6 +99,7 @@
 body {
   max-width: 1440px;
   margin: auto;
+  background: #424146;
 }
 body header .images {
   display: flex;
@@ -141,10 +146,13 @@ body header .search-bar button {
 }
 body #recipes {
   display: flex;
-  justify-content: center;
+  justify-content: left;
+  margin: auto;
   flex-direction: row;
   flex-wrap: wrap;
   gap: 50px;
+  margin-bottom: 50px;
+  width: 1240px;
 }
 body #recipes .missing {
   font: 400 25px "Lato", sans-serif;
@@ -236,7 +244,7 @@ body #recipes .recipeCard .textContent .textContentDown .description {
   font-family: "Roboto", sans-serif;
   font-size: 12px;
   width: 171px;
-  height: 84px;
+  height: 90px;
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 6;
