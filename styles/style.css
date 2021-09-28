@@ -99,7 +99,6 @@
 body {
   max-width: 1440px;
   margin: auto;
-  background: #424146;
 }
 body header .images {
   display: flex;
