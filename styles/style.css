@@ -27,14 +27,24 @@
   max-width: 1240px;
   gap: 20px;
   height: 70px;
+  z-index: 10;
+}
+#filters .first-filter {
+  z-index: 10;
 }
 #filters .first-filter input,
 #filters .first-filter .ingredients-content {
   background: #3282f7;
 }
+#filters .second-filter {
+  z-index: 10;
+}
 #filters .second-filter input,
 #filters .second-filter .appliances-content {
   background: #68d9a4;
+}
+#filters .third-filter {
+  z-index: 10;
 }
 #filters .third-filter input,
 #filters .third-filter .ustensils-content {
@@ -81,7 +91,6 @@
   border-radius: 5px;
   display: none;
   z-index: 10;
-  overflow: overlay;
 }
 #filters form .list-content li {
   width: 200px;
@@ -90,6 +99,7 @@
   overflow: hidden;
   text-overflow: ellipsis;
   cursor: pointer;
+  z-index: 10;
 }
 #filters form .list-content .missing {
   text-overflow: inherit;
