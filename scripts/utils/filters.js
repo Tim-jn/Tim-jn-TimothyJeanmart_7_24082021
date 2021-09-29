@@ -1,4 +1,4 @@
-import { generateFiltersLists, displayRecipes, LowerCaseNormalize } from "../main.js";
+import { generateFiltersLists, displayRecipes, lowerCaseNormalize } from "../main.js";
 import { searchBar } from "./searchBar.js";
 
 export { init, createFiltersLists, searchOnFiltersList };
@@ -51,9 +51,9 @@ function searchOnFiltersList(recipesList, generateFiltersLists) {
     input.addEventListener("keyup", function (e) {
       const targetFilter = e.target.className;
       if (targetFilter.includes("ingredients")) {
-        const searchInput = LowerCaseNormalize(e.target.value);
+        const searchInput = lowerCaseNormalize(e.target.value);
         const filteredIngredients = filtersItems.ingredientsList.filter((ingredient) => {
-          return LowerCaseNormalize(ingredient).includes(searchInput);
+          return lowerCaseNormalize(ingredient).includes(searchInput);
         });
 
         createFiltersLists(
@@ -64,9 +64,9 @@ function searchOnFiltersList(recipesList, generateFiltersLists) {
         );
       }
       if (targetFilter.includes("appliances")) {
-        const searchInput = LowerCaseNormalize(e.target.value);
+        const searchInput = lowerCaseNormalize(e.target.value);
         const filteredAppliances = filtersItems.appliancesList.filter((appliance) => {
-          return LowerCaseNormalize(appliance).includes(searchInput);
+          return lowerCaseNormalize(appliance).includes(searchInput);
         });
 
         createFiltersLists(
@@ -77,9 +77,9 @@ function searchOnFiltersList(recipesList, generateFiltersLists) {
         );
       }
       if (targetFilter.includes("ustensils")) {
-        const searchInput = LowerCaseNormalize(e.target.value);
+        const searchInput = lowerCaseNormalize(e.target.value);
         const filteredUstensils = filtersItems.ustensilsList.filter((ustensil) => {
-          return LowerCaseNormalize(ustensil).includes(searchInput);
+          return lowerCaseNormalize(ustensil).includes(searchInput);
         });
 
         createFiltersLists(
@@ -237,14 +237,14 @@ function displayByTagSearch(recipesList) {
   const filters = Array.from(tags);
   const filteredFilters = recipesList.filter((recipe) => {
     return filters.every((item) => {
-      const formatedItem = LowerCaseNormalize(item.textContent);
+      const formatedItem = lowerCaseNormalize(item.textContent);
       return (
         recipe.ingredients.some((i) => {
-          return LowerCaseNormalize(i.ingredient).includes(formatedItem);
+          return lowerCaseNormalize(i.ingredient).includes(formatedItem);
         }) ||
-        LowerCaseNormalize(recipe.appliance).includes(formatedItem) ||
+        lowerCaseNormalize(recipe.appliance).includes(formatedItem) ||
         recipe.ustensils.some((ustensil) => {
-          return LowerCaseNormalize(ustensil) === formatedItem;
+          return lowerCaseNormalize(ustensil) === formatedItem;
         })
       );
     });
