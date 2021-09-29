@@ -3,7 +3,7 @@ import { RecipesCard } from "./utils/constructor.js";
 import { searchBar } from "./utils/searchBar.js";
 import { init, createFiltersLists } from "./utils/filters.js";
 
-export { LowerCaseNormalize, displayRecipes, generateFiltersLists };
+export { lowerCaseNormalize, displayRecipes, generateFiltersLists };
 
 //// get recipes list (original + updated) and launch init ////
 
@@ -55,7 +55,7 @@ function generateFiltersLists(recipesList, ingredientsList, appliancesList, uste
 
 //// function to lower case and normalize text ////
 
-function LowerCaseNormalize(items) {
+function lowerCaseNormalize(items) {
   return items
     .toLowerCase()
     .normalize("NFD")
