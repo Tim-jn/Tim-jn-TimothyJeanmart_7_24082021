@@ -253,7 +253,7 @@ body #recipes .recipeCard .textContent .textContentDown .description {
   font-family: "Roboto", sans-serif;
   font-size: 12px;
   width: 171px;
-  height: 90px;
+  height: 86px;
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 6;

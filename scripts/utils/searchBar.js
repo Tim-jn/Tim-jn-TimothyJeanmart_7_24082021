@@ -1,4 +1,5 @@
 import { LowerCaseNormalize, displayRecipes, generateFiltersLists } from "../main.js";
+import { searchOnFiltersList } from "./filters.js";
 import { recipes } from "../data/recipes.js";
 
 export { searchBar };
@@ -28,6 +29,7 @@ function searchBar(recipesList) {
         recipesList = filteredRecipies;
         displayRecipes(recipesList);
         generateFiltersLists(recipesList);
+        searchOnFiltersList(recipesList, generateFiltersLists);
       } else {
         recipesSection.innerHTML =
           '<div class="missing">Aucune recette ne correspond à votre critère… <br />Vous pouvez chercher « tarte aux pommes », « poisson », etc.</div>';
@@ -36,6 +38,7 @@ function searchBar(recipesList) {
       recipesList = recipes;
       displayRecipes(recipesList);
       generateFiltersLists(recipesList);
+      searchOnFiltersList(recipesList, generateFiltersLists);
     }
   });
 }

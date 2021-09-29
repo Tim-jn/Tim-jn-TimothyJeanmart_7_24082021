@@ -1,7 +1,7 @@
 import { generateFiltersLists, displayRecipes, LowerCaseNormalize } from "../main.js";
 import { searchBar } from "./searchBar.js";
 
-export { init, createFiltersLists };
+export { init, createFiltersLists, searchOnFiltersList };
 
 function init(recipesList) {
   displayRecipes(recipesList);
