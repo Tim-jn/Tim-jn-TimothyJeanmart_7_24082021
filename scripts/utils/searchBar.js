@@ -1,4 +1,4 @@
-import { LowerCaseNormalize, displayRecipes, generateFiltersLists } from "../main.js";
+import { lowerCaseNormalize, displayRecipes, generateFiltersLists } from "../main.js";
 import { searchOnFiltersList } from "./filters.js";
 import { recipes } from "../data/recipes.js";
 
