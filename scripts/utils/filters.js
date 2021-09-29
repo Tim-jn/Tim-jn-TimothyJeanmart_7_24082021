@@ -12,7 +12,7 @@ function init(recipesList) {
   removeTags(recipesList);
 }
 
-// generate filters lists
+//// create filter lists from a pattern ////
 
 function createFiltersLists(recipesList, ingredientsList, appliancesList, ustensilsList) {
   const ingredientsContainer = document.querySelector(".ingredients-content");
@@ -30,6 +30,8 @@ function createFiltersLists(recipesList, ingredientsList, appliancesList, ustens
   displayTags(recipesList);
 }
 
+// pattern
+
 function filtersListPattern(ElementList, ElementListcontent) {
   ElementList.forEach((element) => {
     const createListsDOM = document.createElement("li");
@@ -38,6 +40,8 @@ function filtersListPattern(ElementList, ElementListcontent) {
     ElementListcontent.appendChild(createListsDOM);
   });
 }
+
+//// search algo on filters lists, update filters lists ////
 
 function searchOnFiltersList(recipesList, generateFiltersLists) {
   const filtersItems = generateFiltersLists(recipesList);
@@ -89,7 +93,7 @@ function searchOnFiltersList(recipesList, generateFiltersLists) {
   });
 }
 
-//// Event display lists (one by one) ////
+//// show and close filters lists (one by one) ////
 
 function displayLists(obj, objlist, item, targetFilter) {
   if (targetFilter.includes(item) && obj.isFilterOpen == false) {
@@ -131,8 +135,6 @@ function displayListsInit() {
       ustensilobj.content = document.querySelector(".ustensils-content");
       ustensilobj.input = document.querySelector(".ustensils-input");
 
-      // Display ingredients list and launch resarch algo (close other lists)
-
       displayLists(
         ingredientobj,
         [ingredientobj, applianceobj, ustensilobj],
@@ -156,9 +158,11 @@ function displayListsInit() {
   });
 }
 
-// Create, add, remove, search by tags
+//// Create, add, remove tags ////
 
 let tagsArray = [];
+
+// tag pattern
 
 function createTag(item) {
   const tag = document.createElement("div");
@@ -176,11 +180,15 @@ function createTag(item) {
   return tag;
 }
 
+// prevent redisplaying the entire array list
+
 function resetTags() {
   document.querySelectorAll(".tag-item").forEach(function (tag) {
     tag.parentElement.removeChild(tag);
   });
 }
+
+// create tags from tag pattern
 
 function addTags() {
   resetTags();
@@ -190,6 +198,8 @@ function addTags() {
     researchTag.appendChild(input);
   });
 }
+
+// display tags, launch function to filter recipes display
 
 function displayTags(recipesList) {
   let listItems = document.querySelectorAll(".list-item");
@@ -205,6 +215,8 @@ function displayTags(recipesList) {
   });
 }
 
+// remove tags on click
+
 function removeTags(recipesList) {
   document.addEventListener("click", function (e) {
     if (e.target.className === "closebtn") {
@@ -217,7 +229,7 @@ function removeTags(recipesList) {
   });
 }
 
-// search on tags
+//// displays the recipes containing the displayed tags ////
 
 function displayByTagSearch(recipesList) {
   const recipesSection = document.getElementById("recipes");

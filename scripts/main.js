@@ -5,6 +5,8 @@ import { init, createFiltersLists } from "./utils/filters.js";
 
 export { LowerCaseNormalize, displayRecipes, generateFiltersLists };
 
+//// get recipes list (original + updated) and launch init ////
+
 function getData(recipesList) {
   recipesList = data();
   init(recipesList);
@@ -19,6 +21,8 @@ function data() {
   return recipesList;
 }
 
+//// display recipes function ////
+
 function displayRecipes(recipesList) {
   const recipesSection = document.getElementById("recipes");
   recipesSection.innerHTML = "";
@@ -27,12 +31,7 @@ function displayRecipes(recipesList) {
   });
 }
 
-function LowerCaseNormalize(items) {
-  return items
-    .toLowerCase()
-    .normalize("NFD")
-    .replace(/[\u0300-\u036f]/g, "");
-}
+//// generate and create filters lists ////
 
 function generateFiltersLists(recipesList, ingredientsList, appliancesList, ustensilsList) {
   let ingredients = [];
@@ -53,5 +52,16 @@ function generateFiltersLists(recipesList, ingredientsList, appliancesList, uste
 
   return { ingredientsList, appliancesList, ustensilsList };
 }
+
+//// function to lower case and normalize text ////
+
+function LowerCaseNormalize(items) {
+  return items
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "");
+}
+
+//// launch ////
 
 getData();
