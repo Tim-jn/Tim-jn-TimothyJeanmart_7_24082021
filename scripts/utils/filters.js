@@ -196,7 +196,9 @@ function displayTags(recipesList) {
   listItems.forEach((item) => {
     item.addEventListener("click", (e) => {
       const selectItem = e.target.innerHTML;
-      tagsArray.push(selectItem);
+      if (!tagsArray.includes(selectItem)) {
+        tagsArray.push(selectItem);
+      }
       addTags();
       displayByTagSearch(recipesList);
     });
