@@ -12,14 +12,14 @@ function searchBar(recipesList) {
 
   // listen search bar input
   searchInput.addEventListener("keyup", (e) => {
-    const input = LowerCaseNormalize(e.target.value);
+    const input = lowerCaseNormalize(e.target.value);
     // get filtered recipes object
     let filteredRecipies = recipesList.filter((recipe) => {
       const recipeIngredients = recipe.ingredients.map((element) => element.ingredient).toString();
       return (
-        LowerCaseNormalize(recipe.name).includes(input) ||
-        LowerCaseNormalize(recipeIngredients).includes(input) ||
-        LowerCaseNormalize(recipe.description).includes(input)
+        lowerCaseNormalize(recipe.name).includes(input) ||
+        lowerCaseNormalize(recipeIngredients).includes(input) ||
+        lowerCaseNormalize(recipe.description).includes(input)
       );
     });
 
