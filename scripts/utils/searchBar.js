@@ -33,6 +33,8 @@ function searchBar(recipesList) {
       } else {
         recipesSection.innerHTML =
           '<div class="missing">Aucune recette ne correspond à votre critère… <br />Vous pouvez chercher « tarte aux pommes », « poisson », etc.</div>';
+        generateFiltersLists(recipesList);
+        searchOnFiltersList(recipesList, generateFiltersLists);
       }
     } else if (input.length <= 3) {
       recipesList = recipes;
