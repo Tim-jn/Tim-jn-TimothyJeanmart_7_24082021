@@ -18,24 +18,22 @@ function searchBar(recipesList) {
     let filteredRecipies = [];
 
     for (let i = 0; i < recipesList.length; i++) {
-      const ingredientsList = recipesList.map((recipe) => {
-        const recipeIngredients = recipe.ingredients
-          .map((element) => element.ingredient)
-          .toString();
-        return recipeIngredients;
-      });
+      const namesList = lowerCaseNormalize(recipesList[i].name).includes(input);
+      const descriptionsList = lowerCaseNormalize(recipesList[i].description).includes(input);
+      let ingredientsList = [];
 
-      const ingredientsFiltered = lowerCaseNormalize(ingredientsList[i]).includes(input);
-      const nameFiltered = lowerCaseNormalize(recipesList[i].name).includes(input);
-      const descriptionFiltered = lowerCaseNormalize(recipesList[i].description).includes(input);
+      for (let j = 0; j < recipesList[i].ingredients.length; j++) {
+        ingredientsList = lowerCaseNormalize(recipesList[i].ingredients[j].ingredient).includes(
+          input
+        );
+      }
 
-      if (ingredientsFiltered || nameFiltered || descriptionFiltered) {
+      if (namesList || descriptionsList || ingredientsList) {
         filteredRecipies.push(recipesList[i]);
       }
     }
-
-    // displays recipes under conditions
     if (input.length >= 3) {
+      // displays recipes under conditions
       if (filteredRecipies.length > 0) {
         displayRecipes(filteredRecipies);
         generateFiltersLists(filteredRecipies);
@@ -43,6 +41,8 @@ function searchBar(recipesList) {
       } else {
         recipesSection.innerHTML =
           '<div class="missing">Aucune recette ne correspond à votre critère… <br />Vous pouvez chercher « tarte aux pommes », « poisson », etc.</div>';
+        generateFiltersLists(filteredRecipies);
+        searchOnFiltersList(filteredRecipies, generateFiltersLists);
       }
     } else if (input.length <= 3) {
       recipesList = recipes;
