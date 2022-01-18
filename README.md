@@ -1,4 +1,6 @@
 # Les petits plats
+
+## Intitulé du projet
 Développez un algorithme de recherche en JavaScript
 
 ## [Live demo](https://timjn-lespetitsplats.netlify.app/)
